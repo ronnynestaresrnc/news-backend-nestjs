@@ -1,6 +1,9 @@
 import { Controller, Get, Query } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
+
 import { NewsService } from './news.service';
 @Controller('news')
+@ApiTags('news') // Puedes agregar más tags según tus necesidades
 export class NewsController {
   constructor(private readonly newsService: NewsService) {}
   @Get()
