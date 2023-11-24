@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://userrnc:4a03TxQSUmPUSD2TNuwKyUDcLMQwKD4m@dpg-clf7e4t3qkas73fa7fe0-a.oregon-postgres.render.com/storytellingnewsdb"
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model table_user {
+  id       Int    @id @default(autoincrement())
+  username String
+  email    String @unique
+}
